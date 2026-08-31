@@ -65,10 +65,3 @@ Desarrollar las diversas técnicas de Administración de archivos para el diseñ
 
 **Ing. Sergio Andrés Noh Puch**  
 📧 serganoh@uacam.mx
-
----
-
-### 📅 Fecha de Elaboración
-
-Junio 30, 2021  
-_Facultad de Ingeniería - Universidad_
