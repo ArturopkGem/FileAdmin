@@ -1,4 +1,4 @@
-public package Practica_03;
+package Practica_03;
 
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;

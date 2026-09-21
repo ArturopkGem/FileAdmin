@@ -1,3 +1,4 @@
+package Practica_03;
 import java.io.Serializable;
 
 public class Alumno implements Serializable {
