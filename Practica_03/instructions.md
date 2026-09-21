@@ -196,7 +196,7 @@ Si terminaste las 3 funcionalidades, intenta implementar estas mejoras:
 📁 PracticaAlumnos/
 ├── 📄 Alumno.java          → Clase serializable
 ├── 📄 AlumnosDB.txt        → Archivo binario (se genera al ejecutar)
-├── 📄 metodos_alumnos.txt  → Contiene los métodos
+├── 📄 GestionAlumnos.txt  → Contiene los métodos
 └── 📄 Main.java            → Ejecución de cada metodo
 ```
 
