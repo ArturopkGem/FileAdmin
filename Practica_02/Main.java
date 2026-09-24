@@ -43,11 +43,27 @@ public class Main {
 
     private static void agregarAlumnoAsitencia(Scanner scanner) {
         System.out.print("Escribe el nombre del alumno: ");
-        String nombre = scanner.nextLine();
-        if (nombre.trim().isEmpty()) {
+        String nombre = scanner.nextLine().trim();
+
+        if (nombre.isEmpty()) {
             System.out.println("El nombre no puede estar vacío.");
             return;
         }
+
+        // Validamos que el nombre no contenga números
+        boolean tieneNumeros = false;
+        for (int i = 0; i < nombre.length(); i++) {
+            if (Character.isDigit(nombre.charAt(i))) {
+                tieneNumeros = true;
+                break;
+            }
+        }
+
+        if (tieneNumeros) {
+            System.out.println("Error: El nombre no puede contener números.");
+            return;
+        }
+
         Act_Object_Stream.agregarAlumnoAsitencia(nombre);
     }
 

@@ -27,6 +27,14 @@ public class Act_Object_Stream {
 
     // Funcionalidad 1: Guardar un nuevo alumno en la asistencia
     public static void agregarAlumnoAsitencia(String nombre) {
+        // Validamos que no contenga números
+        for (int i = 0; i < nombre.length(); i++) {
+            if (Character.isDigit(nombre.charAt(i))) {
+                System.out.println("Error: El nombre no puede contener números.");
+                return;
+            }
+        }
+
         ArrayList<String> lista = leerListaAlumnos();
         lista.add(nombre);
         guardarListaAlumnos(lista);

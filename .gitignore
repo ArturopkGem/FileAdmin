@@ -1,4 +1,6 @@
-﻿*.class
+*.class
 .idea/
 *.iml
 .vscode/
+out/
+bin/
