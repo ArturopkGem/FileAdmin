@@ -19,7 +19,7 @@ class GestionAlumnos {
         alumnos.add(new Alumno("2388", "Fernando",8.5));
         alumnos.add(new Alumno("2388", "Jaime",10));
 
-        try (var fos = new FileOutputStream("AlumnosDB.txt");
+        try (var fos = new FileOutputStream(ARCHIVO);
              ObjectOutputStream oos = new ObjectOutputStream(fos)){
             oos.writeObject(alumnos);
         } catch (FileNotFoundException e) {
