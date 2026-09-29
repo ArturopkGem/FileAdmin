@@ -3,4 +3,4 @@
 *.iml
 .vscode/
 out/
-bin/
+**/out/
