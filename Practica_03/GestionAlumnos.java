@@ -36,7 +36,8 @@ class GestionAlumnos {
         try (var fis = new FileInputStream(ARCHIVO);
              ObjectInputStream ois = new ObjectInputStream(fis)) {
 
-            //---IMPLEMENTACION
+            // Leemos el objeto del archivo y lo convertimos a la lista de alumnos
+            alumnos = (ArrayList<Alumno>) ois.readObject();
 
         } catch (FileNotFoundException e) {
             System.out.println("El archivo no existe. Generando base de datos...");
@@ -52,15 +53,28 @@ class GestionAlumnos {
     public static void mostrarAlumnos() {
         ArrayList<Alumno> alumnos = leerAlumnos();
         System.out.println("===== LISTA DE ALUMNOS =====");
-       //---IMPLEMENTACION
+        // Recorremos la lista e imprimimos cada alumno
+        for (Alumno alumno : alumnos) {
+            System.out.println(alumno);
+        }
     }
 
     // FUNCIONALIDAD 2: Buscar un alumno por matrícula
     public static Alumno buscarAlumnoPorMatricula(String matricula) {
         ArrayList<Alumno> alumnos = leerAlumnos();
 
-        //---IMPLEMENTACION
+        // Recorremos la lista buscando coincidencia de matrícula
+        for (Alumno alumno : alumnos) {
+            if (alumno.getMatricula().equals(matricula)) {
+                return alumno;
+            }
+        }
         return null;
+    }
+
+    // Alias para compatibilidad con instrucciones de Classroom
+    public static Alumno buscarPorMatricula(String mat) {
+        return buscarAlumnoPorMatricula(mat);
     }
 
     public static void mostrarBusqueda(String matricula) {
@@ -82,9 +96,16 @@ class GestionAlumnos {
 
         try (var fos = new FileOutputStream(ARCHIVO);
              ObjectOutputStream oos = new ObjectOutputStream(fos)) {
-            //---IMPLEMENTACION
+            // Escribimos la lista actualizada en el archivo
+            oos.writeObject(alumnos);
+            System.out.println("✅ Alumno agregado correctamente.");
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
+    }
+
+    // Alias para compatibilidad con instrucciones de Classroom
+    public static void AgregarAlumno(Alumno nuevo) {
+        agregarAlumno(nuevo);
     }
 }
